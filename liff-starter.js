@@ -3,6 +3,9 @@ window.onload = function (e) {
         initializeApp(data);
     });
 };
+const context = liff.getContext();
+console.log(context);
+// {"type": "utou", "utouId": "UU29e6eb36812f484fd275d41b5af4e760926c516d8c9faa35…b1e8de8fbb6ecb263ee8724e48118565e3368d39778fe648d", "userId": "U70e153189a29f1188b045366285346bc", "viewType": "full", "accessTokenHash": "ArIXhlwQMAZyW7SDHm7L2g", "availability": {"shareTargetPicker": {"permission": true, "minVer": "10.3.0"}}}
 
 function initializeApp(data) {
     document.getElementById('languagefield').textContent = data.language;
@@ -11,6 +14,7 @@ function initializeApp(data) {
     document.getElementById('utouidfield').textContent = data.context.utouId;
     document.getElementById('roomidfield').textContent = data.context.roomId;
     document.getElementById('groupidfield').textContent = data.context.groupId;
+    
 
     // openWindow call
     document.getElementById('openwindowbutton').addEventListener('click', function () {
@@ -86,3 +90,4 @@ function toggleElement(elementId) {
         elem.style.display = "block";
     }
 }
+
